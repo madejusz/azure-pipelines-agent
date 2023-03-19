@@ -143,25 +143,25 @@ stages:
         publishArtifacts: ${{ parameters.publishArtifacts }}
         buildAlternatePackage: ${{ parameters.buildAlternatePackage }}
 
-  # Linux (ARM64)
-  - ${{ if and(parameters.linux_arm64, not(parameters.releaseRhelOnly)) }}:
-    - template: build-jobs.yml
-      parameters:
-        jobName: build_linux_arm64
-        displayName: Linux (ARM64)
-        pool:
-          name: 1ES_ARM_Agent_Pool
-          vmImage: Ubuntu_2004_ARM64
-        timeoutInMinutes: 75
-        os: linux
-        arch: arm64
-        branch: ${{ parameters.branch }}
-        componentDetection: false
-        unitTests: ${{ parameters.test }}
-        functionalTests: ${{ parameters.test }}
-        sign: false
-        publishArtifacts: ${{ parameters.publishArtifacts }}
-        buildAlternatePackage: ${{ parameters.buildAlternatePackage }}
+#  # Linux (ARM64)
+#  - ${{ if and(parameters.linux_arm64, not(parameters.releaseRhelOnly)) }}:
+#    - template: build-jobs.yml
+#      parameters:
+#        jobName: build_linux_arm64
+#        displayName: Linux (ARM64)
+#        pool:
+#          name: 1ES_ARM_Agent_Pool
+#          vmImage: Ubuntu_2004_ARM64
+#        timeoutInMinutes: 75
+#        os: linux
+#        arch: arm64
+#        branch: ${{ parameters.branch }}
+#        componentDetection: false
+#        unitTests: ${{ parameters.test }}
+#        functionalTests: ${{ parameters.test }}
+#        sign: false
+#        publishArtifacts: ${{ parameters.publishArtifacts }}
+#        buildAlternatePackage: ${{ parameters.buildAlternatePackage }}
 
   # RHEL6 (x64)
   - ${{ if and(parameters.rhel6_x64, not(parameters.skipRhelRelease), parameters.releaseRhelOnly) }}:
