@@ -116,7 +116,7 @@ stages:
           vmImage: ubuntu-20.04
         os: linux
         arch: x64
-        branch: ${{ parameters.branch }}
+          #branch: ${{ parameters.branch }}
         componentDetection: ${{ parameters.componentDetection }}
         unitTests: ${{ parameters.test }}
         functionalTests: ${{ parameters.test }}
